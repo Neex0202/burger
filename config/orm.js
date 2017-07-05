@@ -27,18 +27,18 @@ function objToSql(ob) {
     //CREATING METHODS to execute mySQL commands ie (CRUD/RESTful)
     var orm = {
 
-        selectAll(tableInput, cb) {
+        selectAll(tableInput) {
             var queryString = "SELECT * FROM ??;";
             connection.query(queryString, [tableInput], function(err, result) {
                 if (err) throw err;
                 console.log(result);
                 return result;
             });
-            cb(result);
+            // cb(result);
         },
 
 
-        insertOne(burgerName, cb) {
+        insertOne(burgerName) {
             var queryString = "INSERT INTO burgers (burger_name) VALUE ";
             queryString += burgerName.toString();
 
@@ -47,11 +47,11 @@ function objToSql(ob) {
                 console.log(result);
                 return result;
             });
-            cb(result);
+            // cb(result);
         },
 
 
-        updateONE(devoured, condition, cb) {
+        updateONE(devoured, condition) {
             var queryString = "UPDATE burgers SET "
             queryString += " SET ";
             queryString += objToSql(devoured);
@@ -65,7 +65,7 @@ function objToSql(ob) {
                
                 return result;
             });
-            cb(result);
+            // cb(result);
         }
 
 
