@@ -26,8 +26,8 @@
         {{this.burger_name}}
 
         <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="devoured" value="false">
-          <button type="submit">WAKE UP!</button>
+          <input type="hidden" name="devoured" value="0">
+          <button type="submit">regurgitate</button>
         </form>
       </li>
     {{/if}}
@@ -44,8 +44,8 @@
 
   <div class="form-group">
     <label for="slee">Hungry?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Non-eaten!<br>
-    <input type="radio" name="devoured" value="0"> eaten
+    <input type="radio" name="devoured" value="0" checked> Non-eaten!<br>
+    <input type="radio" name="devoured" value="1"> eaten
   </div>
 
   <button type="submit">Add Burger</button>
